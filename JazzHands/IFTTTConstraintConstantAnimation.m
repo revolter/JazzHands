@@ -10,25 +10,23 @@
 
 @interface IFTTTConstraintConstantAnimation ()
 
-@property (nonatomic, strong) UIView *superview;
 @property (nonatomic, strong) NSLayoutConstraint *constraint;
 
 @end
 
 @implementation IFTTTConstraintConstantAnimation
 
-- (instancetype)initWithSuperview:(UIView *)superview constraint:(NSLayoutConstraint *)constraint
+- (instancetype)initWithConstraint:(NSLayoutConstraint *)constraint
 {
     if ((self = [super init])) {
-        _superview = superview;
         _constraint = constraint;
     }
     return self;
 }
 
-+ (instancetype)animationWithSuperview:(UIView *)superview constraint:(NSLayoutConstraint *)constraint
++ (instancetype)animationWithConstraint:(NSLayoutConstraint *)constraint
 {
-    return [[self alloc] initWithSuperview:superview constraint:constraint];
+    return [[self alloc] initWithConstraint:constraint];
 }
 
 - (void)addKeyframeForTime:(CGFloat)time constant:(CGFloat)constant
@@ -45,7 +43,6 @@
 {
     if (!self.hasKeyframes) return;
     self.constraint.constant = (CGFloat)[(NSNumber *)[self valueAtTime:time] floatValue];
-    [self.superview layoutIfNeeded];
 }
 
 @end

@@ -10,8 +10,8 @@
 
 @interface IFTTTConstraintConstantAnimation : IFTTTAnimation <IFTTTAnimatable>
 
-- (instancetype)initWithSuperview:(UIView *)superview constraint:(NSLayoutConstraint *)constraint;
-+ (instancetype)animationWithSuperview:(UIView *)superview constraint:(NSLayoutConstraint *)constraint;
+- (instancetype)initWithConstraint:(NSLayoutConstraint *)constraint;
++ (instancetype)animationWithConstraint:(NSLayoutConstraint *)constraint;
 - (void)addKeyframeForTime:(CGFloat)time constant:(CGFloat)constant;
 - (void)addKeyframeForTime:(CGFloat)time constant:(CGFloat)constant withEasingFunction:(IFTTTEasingFunction)easingFunction;
 

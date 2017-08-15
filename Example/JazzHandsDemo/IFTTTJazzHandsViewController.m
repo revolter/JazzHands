@@ -436,8 +436,7 @@
     
     [self.contentView addConstraint:sunVerticalConstraint];
     
-    IFTTTConstraintConstantAnimation *sunVerticalAnimation = [IFTTTConstraintConstantAnimation animationWithSuperview:self.contentView
-                                                                                                           constraint:sunVerticalConstraint];
+    IFTTTConstraintConstantAnimation *sunVerticalAnimation = [IFTTTConstraintConstantAnimation animationWithConstraint:sunVerticalConstraint];
     [sunVerticalAnimation addKeyframeForTime:2 constant:-200.f];
     [sunVerticalAnimation addKeyframeForTime:3 constant:20.f];
     [self.animator addAnimation:sunVerticalAnimation];
